@@ -1,0 +1,59 @@
+.l-cards {
+  //display: flex;
+  //flex-wrap: wrap;
+  //gap: var(--xxs);
+  width: auto;
+  display: grid;
+  grid-auto-rows: min-content auto;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: var(--xxs);
+}
+.selected:before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border: 2px solid var(--black);
+}
+.l-card {
+  //flex: 1 1 30%;
+  min-width: 320px;
+  position: relative;
+  .wr-label{
+    position: relative;
+    overflow: hidden;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray300);
+    background-position: bottom;
+    background-size: cover;
+    filter: blur(100px);
+    transform: scale(1.5);
+  }
+  .label {
+    font-size: var(--fs-xs);
+    padding: var(--xxs);
+    z-index: 2;
+    position: relative;
+    justify-content: space-between;
+  }
+  .l-card-btn {
+    position: absolute;
+    top: var(--xxs);
+    right: var(--xxs);
+    z-index: 2;
+    gap: var(--xxs);
+  }
+  .l-card-btn .l-button {
+    background-color: white;
+    padding: .5em;
+    border-radius: 50%;
+  }
+}
